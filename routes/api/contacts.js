@@ -8,8 +8,6 @@ const router = express.Router();
 
 router.get('/', authenticate, controller.listContacts);
 
-router.get('/:id', authenticate, isValidId, controller.getContactById);
-
 router.post('/', authenticate, controller.addContact);
 
 router.put('/:id', authenticate, isValidId, controller.updateContact);
