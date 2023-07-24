@@ -8,10 +8,10 @@ const router = express.Router();
 
 router.get('/', authenticate, controller.listContacts);
 
-router.post('/', controller.addContact);
+router.post('/', authenticate, controller.addContact);
 
-router.put('/:id', isValidId, controller.updateContact);
+router.put('/:id', authenticate, isValidId, controller.updateContact);
 
-router.delete('/:id', isValidId, controller.removeContact);
+router.delete('/:id', authenticate, isValidId, controller.removeContact);
 
 module.exports = router;
